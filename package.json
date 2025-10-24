@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "emotion-theming": "^11.0.0"
+  }
+}

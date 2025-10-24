@@ -1,0 +1,78 @@
+/* All styles for lab 1 */
+:root {
+  --gap: 16px;
+  --pad: 14px;
+  --font: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --bg: #f7f7fb;
+  --card: #3a6db0;
+  --text: #ffffff;
+  --btn: #ef6c2c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: var(--font);
+  background: var(--bg);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--gap);
+}
+
+h1, h2, p { margin: 0; }
+
+#timestamp {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  gap: var(--gap);
+  margin: var(--gap) 0;
+}
+
+a.button, button {
+  border: 0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: var(--btn);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  margin: var(--gap) 0;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.note__text {
+  width: 100%;
+  min-height: 88px;
+  resize: vertical;
+  padding: var(--pad);
+  border-radius: 8px;
+  border: 0;
+  color: var(--text);
+  background: var(--card);
+  outline: none;
+}
+
+.note__remove {
+  background: var(--btn);
+}

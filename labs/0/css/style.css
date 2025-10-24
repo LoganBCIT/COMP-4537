@@ -1,0 +1,78 @@
+/* lock the page to the viewport */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* simple tokens so we don't chase magic numbers */
+:root {
+  --banner-h: 3rem;     /* height of the message bar */
+  --controls-h: 3rem;   /* height of the controls row */
+}
+
+/* message banner fixed to the very top */
+#messageArea {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--banner-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  background: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+
+/* controls row fixed under the banner */
+#controls {
+  position: fixed;
+  top: var(--banner-h);
+  left: 0; right: 0;
+  height: var(--controls-h);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  z-index: 900;
+}
+
+/* initial row layout lives below the fixed bars */
+#buttonContainer {
+  /* space so the row isn't hidden behind fixed bars */
+  margin-top: calc(var(--banner-h) + var(--controls-h));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 5em;
+}
+
+/* scramble mode: occupy the visible viewport below the bars */
+#buttonContainer.scramble-mode {
+  position: fixed;
+  top: calc(var(--banner-h) + var(--controls-h));
+  left: 0;
+  right: 0;
+  bottom: 0;              /* fills to bottom of viewport */
+}
+#buttonContainer.scramble-mode > button {
+  position: absolute;
+}
+
+/* buttons */
+#buttonContainer button {
+  width: 10em;
+  height: 5em;
+  border: 1px solid #bbb;      
+  border-radius: 0.5em;
+  font-size: 1.2rem;
+  color: #111;
+  cursor: pointer;
+}
+
+/* optional success/error variants for the banner */
+.message--success { background: #e8f9f0; color: #0b7a45; border-bottom-color: #bfead6; }
+.message--error   { background: #fff1f0; color: #a4000f; border-bottom-color: #ffd0cc; }

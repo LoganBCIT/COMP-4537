@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dictionary • Search</title>
+  <link rel="stylesheet" href="./css/site.css" />
+</head>
+<body>
+  <main>
+    <h1 id="title"></h1>
+    <p id="intro" class="muted"></p>
+
+    <form id="searchForm" novalidate>
+      <div class="row">
+        <div>
+          <label for="searchInput" id="wordLabel"></label>
+          <input id="searchInput" name="word" type="text" autocomplete="off" />
+          <div id="wordHint" class="muted"></div>
+        </div>
+        <div>
+          <button id="searchBtn" type="submit"></button>
+        </div>
+      </div>
+    </form>
+
+    <section id="result" class="card muted" style="display:none;"></section>
+  </main>
+
+  <script type="module">
+    import { Boot } from './js/app.js';
+    Boot.start();
+  </script>
+</body>
+</html>

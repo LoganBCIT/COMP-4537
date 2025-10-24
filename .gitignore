@@ -1,0 +1,59 @@
+# dependencies
+/vite-app/node_modules
+/node_modules
+/admin
+/.pnp
+.pnp.js
+*.zip
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test.local
+.env.production
+.env.production.local
+.env.staging
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.cache
+public
+/public
+
+# local service account (do not commit)
+comp-4537-diary-firebase-adminsdk-fbsvc-0f3fdafe6e.json
+admin/*.json
+
+# build output
+/dist
+/dist/
+/vite-app/dist
+
+# Firebase local files
+.firebase/
+firebase-debug.log
+
+# VS Code / IDE
+.vscode/
+.idea/
+
+# OS / Editor
+Thumbs.db
+*.suo
+*.ntvs*
+*.user
+*.bak
+
+# logs
+*.log

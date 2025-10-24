@@ -1,0 +1,39 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow only the owner to read/write their user doc
+    match /users/{userId} {
+      allow read, write: if request.auth != null
+        && request.auth.uid == "ivf6UZeOj5X6euOKvZC46esIsdy1";
+    }
+
+    // Entries: public read, owner-only write
+    // Anyone (including unauthenticated users) can read entries.
+    // Only the authenticated owner (by UID) may create, update or delete entries.
+    match /entries/{entryId} {
+      allow read: if true;
+      allow create, update, delete: if request.auth != null
+        && request.auth.uid == "ivf6UZeOj5X6euOKvZC46esIsdy1";
+    }
+
+    // Catch-all deny for any other documents
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+// Notes:
+// - The UID is only used for authenticated requests: read access in this setup
+//   does not require authentication, but write operations must be performed by
+//   your authenticated account (or by a secure server using the Admin SDK).
+// - Ways to add entries without exposing a login page to visitors:
+//    * Use the Firebase Console -> Firestore -> Add Document (manual)
+//    * Run a local script that uses the Firebase Admin SDK (requires a service
+//      account key) to create documents server-side.
+//    * Create a secure Cloud Function or tiny backend endpoint that accepts
+//      requests authenticated by a secret and writes via the Admin SDK.
+
+// Deploy:
+// Replace the UID above with your Firebase Auth UID (it's already set if you
+// copied it from the console), then run:
+//    firebase deploy --only firestore:rules

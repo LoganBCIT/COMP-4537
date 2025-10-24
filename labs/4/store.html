@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dictionary • Store</title>
+  <link rel="stylesheet" href="./css/site.css" />
+</head>
+<body>
+  <main>
+    <h1 id="title"></h1>
+    <p id="intro" class="muted"></p>
+
+    <form id="storeForm" novalidate>
+      <div class="row">
+        <div>
+          <label for="wordInput" id="wordLabel"></label>
+          <input id="wordInput" name="word" type="text" autocomplete="off" />
+          <div id="wordHint" class="muted note"></div>
+        </div>
+        <div>
+          <label for="defInput" id="defLabel"></label>
+          <textarea id="defInput" name="definition"></textarea>
+          <div id="defHint" class="muted note"></div>
+        </div>
+        <div>
+          <button id="submitBtn" type="submit"></button>
+        </div>
+      </div>
+    </form>
+
+    <div id="status" class="status muted" style="display:none;"></div>
+  </main>
+
+  <script type="module">
+    import { Boot } from './js/app.js';
+    Boot.start();  // auto-detects which page to init
+  </script>
+</body>
+</html>

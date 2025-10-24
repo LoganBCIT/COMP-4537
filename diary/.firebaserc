@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "comp-4537-diary",
+    "prod": "comp-4537-diary",
+    "ISA_diary": "comp-4537-diary",
+    "diary": "comp-4537-diary"
+  },
+  "targets": {
+    "comp-4537-diary": {
+      "hosting": {
+        "comp-4537-diary": [
+          "comp-4537-diary"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

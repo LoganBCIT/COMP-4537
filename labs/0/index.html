@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab 0 Memory Game</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main>
+    <!-- Top message banner (fixed via CSS) -->
+    <p id="messageArea"></p>
+
+    <!-- Controls bar (fixed under the banner via CSS) -->
+    <div id="controls">
+      <label id="numButtonsLabel" for="numButtonsInput"></label>
+      <input type="number" id="numButtonsInput" min="3" max="7" step="1" />
+      <button id="goButton">Go</button>
+    </div>
+
+    <!-- Game area (row first, absolute during scramble) -->
+    <div id="buttonContainer" class="row-mode"></div>
+  </main>
+
+  <!-- Main game script -->
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
