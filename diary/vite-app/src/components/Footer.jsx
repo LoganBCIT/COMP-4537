@@ -6,7 +6,8 @@ import Lang from '../lang/en/en'
 import { UI } from '../constants'
 
 const FooterBlock = styled.footer`
-  margin-top: 120px;
+  /* push footer to the bottom of the page when inside a column flex container */
+  margin-top: auto;
   padding: 30px 0px;
   color: ${props => props.theme.colors.secondary};
   display: flex;
